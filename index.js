@@ -1,9 +1,3 @@
-document.addEventListener('DOMContentLoaded', function (e) {
-    e.preventDefault;
-    submitData("hiba", "hiba@gmail.com")
- 
-});
-
 
 
 function submitData(userName, userEmail) {
@@ -21,14 +15,14 @@ function submitData(userName, userEmail) {
             email: userEmail
         })
     };
-    fetch("http://201.209.104.33:3000/users", configObj)
+    fetch("http://localhost:3000/users", configObj)
         .then(response => {
             return response.json();
         })
         .then(json => {
-             const domCreate = document.createElement('P')
-             domCreate.innerHTML = 'hello';
-             body.appendChild(domCreate)
+            
+             body.innerHTML+= Object.entries(json)
+        
 
         })
 
@@ -42,5 +36,12 @@ function submitData(userName, userEmail) {
 
 
 }
+
+
+
+    submitData('hiba', 'hiba@gmail.com')
+  
+
+
 
 
